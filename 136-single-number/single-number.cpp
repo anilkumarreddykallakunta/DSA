@@ -1,18 +1,13 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        unordered_map<int,int> single;
-        for(int i=0;i<nums.size();i++){
-          if(!single[nums[i]]){
-              single[nums[i]]=1;
-          }
-          else{
-              single[nums[i]]++;
-          }
+        unordered_map<int,int> hash;
+        for(int num:nums){
+            hash[num]++;
         }
-        for(int i=0;i<nums.size();i++){
-            if(single[nums[i]]==1){
-                return nums[i];
+        for(int num: nums){
+            if(hash[num]==1){
+                return num;
             }
         }
         return -1;
