@@ -1,10 +1,15 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        int ans =0;
-        for(int i=0;i<nums.size();i++){
-            ans = ans ^ nums[i];
+        unordered_map<int,int> hash;
+        for(int num:nums){
+            hash[num]++;
         }
-        return ans;
+        for(int num:nums){
+            if(hash[num]==1){
+                return num;
+            }
+        }
+        return -1;
     }
 };
