@@ -5,13 +5,12 @@
 var reverseString = function(s) {
     let size = s.length;
     let halfSize = Math.floor(size/2);
-    let left = 0;
-    let right = size-1;
-    for(let i =0;i<halfSize;i++){
-        let temp = s[left];
-        s[left] = s[right];
-        s[right] = temp;
-        left++;
-        right--;
+    for(let i=0;i<halfSize;i++){
+        let tem = s[i];
+        s[i] = s[size - i - 1];
+        s[size - i - 1] = tem;
     }
 };
+
+
+
