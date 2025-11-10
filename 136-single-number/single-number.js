@@ -7,7 +7,7 @@ var singleNumber = function(nums) {
     let n = nums.length;
     for(let i=0;i<n;i++){
         if(!hash[nums[i]]){
-            hash[nums[i]] =1;
+            hash[nums[i]]=1;
         }
         else{
             hash[nums[i]]++;
@@ -19,3 +19,4 @@ var singleNumber = function(nums) {
         }
     }
 };
+
